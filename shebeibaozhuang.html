@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
+<!--页眉-->
 <header data-am-widget="header"
         class="am-header am-header-default">
     <div class="am-header-left am-header-nav">
@@ -34,11 +35,107 @@
         </a>
     </div>
 </header>
+<br/>
+<br/>
+<br/>
+<!--表单开始-->
+<form class="am-form am-form-horizontal">
+    <!--设备ID-->
+    <div class="am-form-group">
+        <label for="device_id" class="am-u-sm-2 am-form-label">设备ID</label>
+        <div class="am-u-sm-10">
+            <input type="text" id="device_id" placeholder="输入您的设备ID">
+            <p style="color: #ff8839">设备ID可以选择手动输入和二维码扫描自动输入</p>
+        </div>
+    </div>
+    <!--设备名称-->
+    <div class="am-form-group">
+        <label for="device_name" class="am-u-sm-2 am-form-label">设备名称</label>
+        <div class="am-u-sm-10">
+            <input type="text" id="device_name" placeholder="输入您的设备名称">
+        </div>
+    </div>
+    <!--位置选择-->
+    <div class="am-form-group">
+        <label for="picker" class="am-u-sm-2 am-form-label">设备地点</label>
+        <div class="am-u-sm-10">
+            <input type="text" id='picker'/>
+
+        </div>
+    </div>
+
+
+    <div class="am-form-group">
+        <div class="am-u-sm-10 am-u-sm-offset-5">
+            <button type="submit" class="am-btn am-btn-default">确认报装</button>
+        </div>
+    </div>
+</form>
+
+
+<!--页脚-->
+<footer data-am-widget="footer"
+        class="am-footer am-footer-default"
+        data-am-footer="{  }">
+    <div class="am-footer-switch">
+    <span class="am-footer-ysp" data-rel="mobile"
+          data-am-modal="{target: '#am-switch-mode'}">
+          移动版
+    </span>
+        <span class="am-footer-divider"> | </span>
+        <a id="godesktop" data-rel="desktop" class="am-footer-desktop" href="javascript:">
+            电脑版
+        </a>
+    </div>
+    <div class="am-footer-miscs ">
+
+        <p>由 <a href="http://www.yunshipei.com/" title="诺亚方舟"
+                target="_blank" class="">中央民族大学</a>
+            提供技术支持</p>
+        <p>CopyRight©2014 AllMobilize Inc.</p>
+        <p>京ICP备13033158</p>
+    </div>
+</footer>
+
+<div id="am-footer-modal"
+     class="am-modal am-modal-no-btn am-switch-mode-m am-switch-mode-m-default">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd am-modal-footer-hd">
+            <a href="javascript:void(0)" data-dismiss="modal" class="am-close am-close-spin " data-am-modal-close>&times;</a>
+        </div>
+        <div class="am-modal-bd">
+            您正在浏览的是
+
+            <span class="am-switch-mode-owner">
+            移动版
+        </span>
+
+            <span class="am-switch-mode-slogan">
+              为您当前手机订制的移动网站。
+        </span>
+        </div>
+    </div>
+</div>
 
 <script src="assets/js/amazeui.ie8polyfill.min.js"></script>
 <script src="assets/js/amazeui.min.js"></script>
 <script src="assets/js/amazeui.widgets.helper.min.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/handlebars.min.js"></script>
+<script>
+    $("#picker").picker({
+        toolbarTemplate: '<header class="bar bar-nav">\
+  <button class="button button-link pull-left">按钮</button>\
+  <button class="button button-link pull-right close-picker">确定</button>\
+  <h1 class="title">标题</h1>\
+  </header>',
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
+            }
+        ]
+    });
+</script>
 </body>
 </html>
