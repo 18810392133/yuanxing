@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
     <title>设备报装</title>
     <link rel="stylesheet" href="assets/css/amazeui.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="assets/css/amazeui.flat.min.css">
     <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <!-- 引入 FrozenUI -->
+    <link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css"/>
 </head>
 <body>
 <!--页眉-->
@@ -63,11 +68,27 @@
 
         </div>
     </div>
-
-
+    <!--可管理此传感器的用户-->
+    <div class="am-form-group">
+        <label class="am-u-sm-2 am-form-label">可管理此传感器的用户</label>
+        <div class="am-u-sm-10">
+            <div class="ui-form-item ui-form-item-checkbox ui-border-b">
+                <label class="ui-checkbox">
+                    <input type="checkbox">
+                </label>
+                <p>表单中用于多选操作</p>
+            </div>
+            <div class="ui-form-item ui-form-item-checkbox ui-border-b">
+                <label class="ui-checkbox">
+                    <input type="checkbox" checked="">
+                </label>
+                <p>表单中用于多选操作</p>
+            </div>
+        </div>
+    </div>
     <div class="am-form-group">
         <div class="am-u-sm-10 am-u-sm-offset-5">
-            <button type="submit" class="am-btn am-btn-default">确认报装</button>
+            <button type="submit" class="am-btn am-btn-default am-btn-primary">确认报装</button>
         </div>
     </div>
 </form>
@@ -77,6 +98,7 @@
 <footer data-am-widget="footer"
         class="am-footer am-footer-default"
         data-am-footer="{  }">
+
     <div class="am-footer-switch">
     <span class="am-footer-ysp" data-rel="mobile"
           data-am-modal="{target: '#am-switch-mode'}">
@@ -122,18 +144,28 @@
 <script src="assets/js/amazeui.widgets.helper.min.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/handlebars.min.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script>
     $("#picker").picker({
         toolbarTemplate: '<header class="bar bar-nav">\
-  <button class="button button-link pull-left">按钮</button>\
   <button class="button button-link pull-right close-picker">确定</button>\
-  <h1 class="title">标题</h1>\
+  <h1 class="title">请选择地区</h1>\
   </header>',
         cols: [
             {
                 textAlign: 'center',
-                values: ['iPhone 4', 'iPhone 4S', 'iPhone 5', 'iPhone 5S', 'iPhone 6', 'iPhone 6 Plus', 'iPad 2', 'iPad Retina', 'iPad Air', 'iPad mini', 'iPad mini 2', 'iPad mini 3']
-            }
+                values: ['北京市']
+                //如果你希望显示文案和实际值不同，可以在这里加一个displayValues: [.....]
+            },
+            {
+                textAlign: 'center',
+                values: ['海淀区', '朝阳区', '丰台区']
+            },
+            {
+                textAlign: 'center',
+                values: ['海淀区：人民大学', '海淀区：北京大学']
+            },
         ]
     });
 </script>
